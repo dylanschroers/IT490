@@ -25,6 +25,7 @@ function sendLogin($username, $password) {
 	
 		
 	echo "client received response: ".PHP_EOL;
+
 	if ($response == "1") {
 		return true;
 	}else {
