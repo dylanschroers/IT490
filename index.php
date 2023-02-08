@@ -2,7 +2,7 @@
 <script>
 
 function HandleLoginResponse(response) {
-	var text = (response);
+	var text = JSON.parse(response);
 	document.getElementById("textResponse").innerHTML = "response: "+text+"<p>";
 }
 

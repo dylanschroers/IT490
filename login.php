@@ -28,6 +28,7 @@ if ($request["type"] == "login") {
 }
 
 echo json_encode($response);
+
 exit(0);
 
 ?>

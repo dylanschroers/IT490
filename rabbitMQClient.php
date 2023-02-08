@@ -1,4 +1,4 @@
-#!/usr/bin/php
+
 <?php
 
 require_once('path.inc');
@@ -14,7 +14,7 @@ function sendLogin($username, $password) {
 	}
 
 	$client = new rabbitMQClient("testRabbitMQ.ini","testServer");
-	if (isset($argv[1]))
+	
 	$request = array();
 	$request['type'] = "Login";
 	$request['username'] = $username;
@@ -24,7 +24,7 @@ function sendLogin($username, $password) {
 	$response = $client->send_request($request);
 	
 		
-	echo "client received response: ".PHP_EOL;
+	//echo "client received response: ".PHP_EOL;
 
 	if ($response == "1") {
 		return true;
@@ -34,7 +34,7 @@ function sendLogin($username, $password) {
 
 }
 
-print_r($response);
-echo "\n\n";
-echo $argv[0]." END".PHP_EOL;
+//print_r($response);
+//echo "\n\n";
+//echo $argv[0]." END".PHP_EOL;
 
