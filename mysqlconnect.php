@@ -4,7 +4,7 @@
 //$mydb = new mysqli('127.0.0.1','dbmaster','12345','it490');
 
 function doLogin($username, $password) {
-	$mydb = new mysqli('127.0.0.1','dbmaster','12345','it490');
+	$mydb = new mysqli('127.0.0.1','jkz3','12345','userDB');
 	if ($mydb->errno != 0)
 	{
 		echo "failed to connect to database: ". $mydb->error . PHP_EOL;
