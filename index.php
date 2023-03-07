@@ -26,7 +26,10 @@ function SendLoginRequest(formUname,formPword) {
 </script>
 <style>
 	* {
-		background-color: blue;
+		background-color: lightblue;
+	}
+	.login_head {
+		padding: 90%;
 	}
 	#username, #password {
 		position: fixed;
@@ -37,7 +40,7 @@ function SendLoginRequest(formUname,formPword) {
 <head>
 	<link rel="shortcut icon" href="#">
 </head>
-<h1>login page 2</h1>
+<h1 id="login_head">login page 2</h1>
 <body>
 <div id="textResponse">
 awaiting response2
