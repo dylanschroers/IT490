@@ -20,12 +20,13 @@ function sendLogin($username, $password) {
 	$request['username'] = $username;
 	$request['password'] = $password;
 	$request['message'] = $msg;
-	
-	$response = $client->send_request($request);
-	
-		
-	//echo "client received response: ".PHP_EOL;
 
+	echo 'before';
+	$response = $client->send_request($request);
+	echo 'after';
+		
+	echo "client received response: ".PHP_EOL;
+	//echo $response;
 	if ($response == "1") {
 		return true;
 	}else {
@@ -33,7 +34,7 @@ function sendLogin($username, $password) {
 	}	
 
 }
-
+echo sendLogin('test','test');
 //print_r($response);
 //echo "\n\n";
 //echo $argv[0]." END".PHP_EOL;
