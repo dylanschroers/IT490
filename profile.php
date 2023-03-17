@@ -7,16 +7,18 @@
 
 
 $servername = "localhost";
-$username = "root";
+$username = "jkz3";
 $password = "12345";
 $dbName = "Users";
 
-$conn = mysqli_connect($servername, $username, $password, $dbName);
+$conn = new mysqli($servername, $username, $password, $dbName);
 
 
 //connection error
-if (!$conn){
-        die("The connection failed: " . mysqli_connect_error());}
+if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+
 
 
 //query
