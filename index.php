@@ -39,6 +39,9 @@ function SendLoginRequest(formUname,formPword) {
 	.txtres {
 		text-align: center;
 	}
+	.lgnbtn {
+		margin: auto;
+	}
 	#register {
 		float: right;
 	}
@@ -49,7 +52,7 @@ function SendLoginRequest(formUname,formPword) {
 	<link rel="shortcut icon" href="#">
 	<!-- Header -->
 	<h1 id="cent">Login</h1>
-	<!-- Register -->
+	<!-- Register Button -->
 	<button type="button" id="Register" class="btn btn-primary btn-block mb-4" value="Register">Register</button>
 </head>
 <body>
@@ -67,7 +70,7 @@ function SendLoginRequest(formUname,formPword) {
 			</div>
 
 			<!-- Login Button -->
-			<button type="button" class="btn btn-primary btn-block mb-4" value="Login" onclick="SendLoginRequest(document.getElementById('username').value, document.getElementById('password').value);">Login</button>
+			<button type="button" class="btn btn-primary btn-block mb-4 lgnbtn" value="Login" onclick="SendLoginRequest(document.getElementById('username').value, document.getElementById('password').value);">Login</button>
 		</form>
 	</div>
 </body>
