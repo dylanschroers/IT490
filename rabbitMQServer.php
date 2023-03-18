@@ -3,24 +3,32 @@
 require_once('path.inc');
 require_once('get_host_info.inc');
 require_once('rabbitMQLib.inc');
-require_once('mysqlconnect.php');
+require_once('getData.php');
 
-function requestProcessor($request)
-{
-  echo "received request".PHP_EOL;
-  //var_dump($request);
-  if(!isset($request['type']))
-  {
-    return "ERROR: unsupported message type";
-  }
-  switch ($request['type'])
-  {
-    case "Login":
-      return doLogin($request['username'],$request['password']);
-    case "validate_session":
-      return doValidate($request['sessionId']);
-  }
-  return array("returnCode" => '0', 'message'=>"Server received request and processed");
+function requestProcessor($request) {
+  	echo "received request".PHP_EOL;
+  	//var_dump($request);
+  	if(!isset($request['type'])) {
+    		return "ERROR: unsupported message type";
+  	}
+	switch ($request['type'])
+  	{
+    		case "Login":
+      			return doLogin($request['username'],$request['password']);
+   		case "validate_session":
+			return doValidate($request['sessionId']);
+			break;
+		case "Request":
+			return getData($request['search'], "search");
+			break;
+		case "Lookup":
+			echo $request['showID'];
+			return getData($request['showID'], "lookup");
+			break;
+	}
+	echo 'here';
+	echo $request['type'];
+  	return array("returnCode" => '0', 'message'=>"Server received request and processed");
 }
 
 $server = new rabbitMQServer("testRabbitMQ.ini","testServer");
