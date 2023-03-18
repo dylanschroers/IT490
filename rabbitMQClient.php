@@ -34,7 +34,44 @@ function sendLogin($username, $password) {
 	}	
 
 }
-echo sendLogin('test','test');
+
+function showRequest($searchBar) {
+	if (isset($argv[1])) {
+		$msg = $argv[1];
+	} else {
+		$msg = "test msg";
+	}
+
+	$client = new rabbitMQClient("testRabbitMQ.ini", "testServer");
+	$request = array();
+	$request['type'] = "Request";
+	$request['search'] = $searchBar;
+	$request['message'] = $msg;
+
+	$response = $client->send_request($request);
+
+	return($response);
+}
+
+function showLookup($showID) {
+	if (isset($argv[1])) {
+		$msg = $argv[1];
+	} else {
+		$msg = "idk";
+	}
+
+	$client = new rabbitMQClient("testRabbitMQ.ini", "testServer");
+	$request = array();
+	$request['type'] = "Lookup";
+	$request['showID'] = $showID;
+	$request['message'] = $msg;
+
+	$response = $client->send_request($request);
+
+	return($response);
+}
+
+
 //print_r($response);
 //echo "\n\n";
 //echo $argv[0]." END".PHP_EOL;
