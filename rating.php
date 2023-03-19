@@ -32,20 +32,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 $api_url = 'http://api.tvmaze.com/shows';
 $shows_json = file_get_contents($api_url);
 $shows = json_decode($shows_json);
+?>
 
-// Display a form to allow the user to rate a TV show
-echo '<h1>Rate a TV Show</h1>';
-echo '<form method="post" action="">';
-echo '<label for="show_id">Select a TV show:</label>';
-echo '<select name="show_id" id="show_id">';
-foreach ($shows as $show) {
-    echo '<option value="' . $show->id . '">' . $show->name . '</option>';
-}
-echo '</select><br>';
-echo '<label for="rating">Rate the show (1-5 stars):</label>';
-echo '<input type="number" name="rating" id="rating" min="1" max="5"><br>';
-echo '<input type="submit" value="Submit Rating">';
-echo '</form>';
+<!-- Display a form to allow the user to rate a TV show -->
+<html>
+<h1>Rate a TV Show</h1>
+<form method="post" action="">
+  <label for="show_id">Select a TV show:</label>
+  <select name="show_id" id="show_id">
+    <?php foreach ($shows as $show) { ?>
+      <option value="<?php echo $show->id; ?>"><?php echo $show->name; ?></option>
+    <?php } ?>
+  </select><br>
+  <label for="rating">Rate the show (1-5 stars):</label>
+  <input type="number" name="rating" id="rating" min="1" max="5"><br>
+  <input type="submit" value="Submit Rating">
+</form>
+</html>
+
+<?php
 
 // Close the MySQL database connection
 $mysqli->close();
