@@ -35,7 +35,7 @@ function sendLogin($username, $password) {
 
 }
 
-function showRequest($searchBar) {
+function checkCache($searchBar) {
 	if (isset($argv[1])) {
 		$msg = $argv[1];
 	} else {
@@ -44,7 +44,7 @@ function showRequest($searchBar) {
 
 	$client = new rabbitMQClient("testRabbitMQ.ini", "testServer");
 	$request = array();
-	$request['type'] = "Request";
+	$request['type'] = "cacheCheck";
 	$request['search'] = $searchBar;
 	$request['message'] = $msg;
 
