@@ -35,6 +35,7 @@ $shows = json_decode($shows_json);
 ?>
 
 <!-- Display a form to allow the user to rate a TV show -->
+<!DOCTYPE html>
 <html>
 <h1>Rate a TV Show</h1>
 <form method="post" action="">
