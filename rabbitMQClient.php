@@ -33,8 +33,21 @@ function sendLogin($username, $password) {
 	}	
 
 }
-echo sendLogin('test','test');
-//print_r($response);
-//echo "\n\n";
-//echo $argv[0]." END".PHP_EOL;
 
+function showRequest($searchBar) {
+	if (isset($argv[1])) {
+		$msg = $argv[1];
+	} else {
+		$msg = "still idk";
+	}
+
+	$client = new rabbitMQClient("testRabbitMQ.ini", "testServer");
+	$request = array();
+	$request['type'] = "Request";	
+	$request['search'] = $searchBar;
+	$request['message'] = $msg;
+
+	$response = $client->send_request($request);
+
+	return ($response);
+}

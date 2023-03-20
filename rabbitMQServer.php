@@ -19,7 +19,12 @@ function requestProcessor($request)
       return doLogin($request['username'],$request['password']);
     case "validate_session":
       return doValidate($request['sessionId']);
+      break;
+    case "search" or "lookup":
+	    return checkCache($request['check'], $request['type']);
+	    break;
   }
+
   return array("returnCode" => '0', 'message'=>"Server received request and processed");
 }
 
