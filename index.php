@@ -1,3 +1,7 @@
+<?php
+require("functions.php")
+?>
+
 <html>
 <script>
 
