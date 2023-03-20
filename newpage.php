@@ -14,19 +14,19 @@
 	function HandleLookupResponse(response) {
 		var result = JSON.parse(response);
 		
-		document.getElementById("Title").innerHTML = result['name'];
-
-		document.getElementById("Genres").innerHTML = "<br>Genres: "+result['genres'];
-		document.getElementById("Rating").innerHTML = "<br>Rating: "+result['rating']['average'];
-		document.getElementById("Picture").innerHTML = "<br><img src="+result['image']['medium']+">";
-		document.getElementById("Summary").innerHTML = "<br>Summary: <p>"+result['summary']+"</p><br>";
+		document.getElementById("Title").innerHTML = result[2];
+		
+		document.getElementById("Genres").innerHTML = "<br>Genres: "+result[7];
+		document.getElementById("Rating").innerHTML = "<br>Rating: "+result[4];
+		document.getElementById("Picture").innerHTML = "<br><img src="+result[3]+">";
+		document.getElementById("Summary").innerHTML = "<br>Summary: <p>"+result[6]+"</p><br>";
 	}
 
 	function showLookup(sid) {
 		var request = new XMLHttpRequest();
 		request.open("POST", "search.php", true);
 		request.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-		request.send("type=lookup&sid="+sid);
+		request.send("type=lookup&sval="+sid);
 		request.onreadystatechange = function() {
 			if ((this.readyState == 4)&&(this.status == 200)) {
 				HandleLookupResponse(this.responseText);
@@ -44,12 +44,12 @@
 	Picture
 	</div>
 
-	<div id = "Genres">
-	Genres
-	</div>
-
 	<div id = "Rating">
 	Rating
+	</div>
+
+	<div id = "Genres">
+	Genres
 	</div>
 
 	<div id = "Summary">

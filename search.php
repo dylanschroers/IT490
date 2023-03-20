@@ -10,14 +10,17 @@ $response = "unsupported request type, fuck off";
 
 require('rabbitMQClient.php');
 
-if ($request['type'] == "search") {
-	$result = json_decode(showRequest($request["sname"]),true);
-	foreach ($result as $sname)
-		echo ("<a class='post' href='newpage.php?name=".$sname['show']['name']."
-		&id=".$sname['show']['id']."'>".$sname['show']['name']."</a><br>");
-} elseif ($request['type'] == "lookup") {
-	$result = (showLookup($request["sid"]));
-	print_r($result);
-}
+/*
+$request = array();
+$request['sname'] = 'bad';
+$request['type'] = 'search';
+ */
+
+$result = (checkCache($request['sval'], $request['type']));
+
+//print_r($result[0]);
+print_r(json_encode($result));
+
+
 
 exit(0);
