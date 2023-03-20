@@ -29,13 +29,13 @@ function sendLogin($username, $password) {
 	//echo $response;
 	if ($response == "1") {
 		return true;
-	}else {
+	} else {
 		return false;
 	}	
 
 }
 
-function checkCache($searchBar) {
+function checkCache($checkMsg, $checkType) {
 	if (isset($argv[1])) {
 		$msg = $argv[1];
 	} else {
@@ -44,34 +44,16 @@ function checkCache($searchBar) {
 
 	$client = new rabbitMQClient("testRabbitMQ.ini", "testServer");
 	$request = array();
-	$request['type'] = "cacheCheck";
-	$request['search'] = $searchBar;
+	$request['check'] = $checkMsg;
+	$request['type'] = $checkType;
 	$request['message'] = $msg;
 
 	$response = $client->send_request($request);
-
 	return($response);
+	
 }
 
-function showLookup($showID) {
-	if (isset($argv[1])) {
-		$msg = $argv[1];
-	} else {
-		$msg = "idk";
-	}
-
-	$client = new rabbitMQClient("testRabbitMQ.ini", "testServer");
-	$request = array();
-	$request['type'] = "Lookup";
-	$request['showID'] = $showID;
-	$request['message'] = $msg;
-
-	$response = $client->send_request($request);
-
-	return($response);
-}
-
-
+//print_r(checkCache("1", "lookup"));
 //print_r($response);
 //echo "\n\n";
 //echo $argv[0]." END".PHP_EOL;
