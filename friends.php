@@ -1,3 +1,16 @@
+<?php
+if (!isset($_POST)) {
+        $msg = 'no post msg, fuck off';
+        echo json_encode($msg);
+        exit(0);
+}
+
+$request = $_POST;
+$response = "unsupported request type, fuck off";
+
+require('rabbitMQClient.php');
+?>
+
 <!DOCTYPE html>
 <html>
 <head>

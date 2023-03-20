@@ -1,7 +1,18 @@
-	
+
 
 
 <?php
+
+if (!isset($_POST)) {
+        $msg = 'no post msg, fuck off';
+        echo json_encode($msg);
+        exit(0);
+}
+
+$request = $_POST;
+$response = "unsupported request type, fuck off";
+
+require('rabbitMQClient.php');
 
 //this is all for the profile and to grab info from DB
 
@@ -10,15 +21,16 @@ $servername = "localhost";
 $username = "jkz3";
 $password = "12345";
 $dbName = "Users";
-
-$conn = new mysqli($servername, $username, $password, $dbName);
-
-
-//connection error
 if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
         }
 
+$conn = mysqli_connect($servername, $username, $password, $dbName);
+
+
+//connection error
+if (!$conn){
+        die("The connection failed: " . mysqli_connect_error());}
 
 
 //query
