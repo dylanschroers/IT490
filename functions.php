@@ -5,7 +5,7 @@ function logged_in($redirect = false, $destination = "login.php")
 {
     $isLoggedIn = isset($_SESSION["user"]);
     if ($redirect && !$isLoggedIn) {
-        echo '';
+        echo 'Not logged in!';
         die(header("Location: $destination"));
     }
     return $isLoggedIn; //se($_SESSION, "user", false, false);
