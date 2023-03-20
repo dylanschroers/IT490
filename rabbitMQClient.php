@@ -29,7 +29,7 @@ function sendLogin($username, $password) {
 	//echo $response;
 	if ($response == "1") {
 		return true;
-	}else {
+	} else {
 		return false;
 	}	
 
