@@ -4,6 +4,7 @@
 <?php
 require('functions.php');
 require('navbar.php');
+require('header.php');
 
 require_once('path.inc');
 require_once('get_host_info.inc');
@@ -69,7 +70,7 @@ mysqli_close($conn);
 
 }
 else{
-	redirect(login.php);
+	redirect('login.php');
 }
 
 ?>
