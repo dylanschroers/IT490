@@ -25,7 +25,7 @@ function se($v, $k = null, $default = "", $isEcho = true)
     }
 }
 // User helpers
-function logged_in($redirect = false, $destination = "login.php")
+function logged_in($redirect = false, $destination = "index.php")
 {
     $isLoggedIn = isset($_SESSION["user"]);
     if ($redirect && !$isLoggedIn) {

@@ -1,5 +1,5 @@
 <?php
-require("functions.php")
+// require("functions.php")
 ?>
 
 <html>
@@ -65,12 +65,12 @@ function SendLoginRequest(formUname,formPword) {
 			<div class="txtres" id="textResponse">awaiting response2</div>
 			<!-- Username -->
 			<div class="form-outline mb-4">
-				<input type="username" id="form2Example1 username" class="form-control" placeholder="Username" />
+				<input type="username" id="form2Example1" class="form-control" placeholder="Username" />
 			</div>
 
 			<!-- Password -->
 			<div class="form-outline mb-4">
-				<input type="password" id="form2Example2 password" class="form-control" placeholder="Password" />
+				<input type="password" id="form2Example2" class="form-control" placeholder="Password" />
 			</div>
 
 			<!-- Login Button -->

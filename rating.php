@@ -1,13 +1,13 @@
 <?php
-require('functions.php');
+// require('functions.php');
 require('header.php');
 
 // Connect to the MySQL database
-$host = 'localhost';
-$user = 'username';
-$password = 'password';
+$serverhost = 'localhost';
+$user = 'jkz3';
+$password = '12345';
 $dbname = 'tv_shows';
-$mysqli = new mysqli($host, $user, $password, $dbname);
+$mysqli = new mysqli($serverhost, $user, $password, $dbname);
 
 // Check for connection errors
 if ($mysqli->connect_errno) {

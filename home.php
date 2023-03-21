@@ -1,5 +1,5 @@
 <?php
-require('functions.php');
+// require(functions.php);
 require('header.php');
 ?>
 <!DOCTYPE html>
@@ -13,6 +13,10 @@ require('header.php');
 </head>
 <body>
 	<p style="text-align:center">Learn more about your favorite TV show!</p>
-	<button style="margin-left:47%"class="button" onclick="window.location.href='searchBar.php';">Search</button>
+	<div id="button" class="container">
+        <div class="col-md-12 text-center">
+			<button type="button" class="btn btn-outline-primary text-center" onclick="window.location.href='searchBar.php';">Search</button>
+        </div>
+    </div>
 </body>
 </html>

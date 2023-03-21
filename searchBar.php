@@ -1,12 +1,11 @@
 <?php
-require('functions.php');
+// require('functions.php');
 require('header.php');
 ?>
 
 <html>
 <h1>Search</h1>
-<p style="text-align:center">This will be the page placeholder for searching up TV shows until this feature is implemented as a function.</p>
-<p style="text-align:center"><i>Well....I think.......<i></p>
+<p style="text-align:center">This will be the page placeholder for searching up TV shows until this feature is implemented as a function.<br><br><i>Well....I think.......</i></p>
 
 <style>
 	.input-group {

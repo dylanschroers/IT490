@@ -2,7 +2,7 @@
 
 
 <?php
-require('functions.php');
+// require('functions.php');
 require('header.php');
 
 require_once('path.inc');
