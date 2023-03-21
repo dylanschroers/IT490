@@ -3,6 +3,19 @@
 
 <?php
 
+require_once('path.inc');
+require_once('get_host_info.inc');
+require_once('rabbitMQLib.inc');
+require_once('mysqlconnect.php');
+
+
+//validates session
+ 
+
+if logged_in(true){
+
+
+
 if (!isset($_POST)) {
         $msg = 'no post msg, fuck off';
         echo json_encode($msg);
@@ -52,6 +65,12 @@ echo "</table>";
 
 
 mysqli_close($conn);
+
+}
+else{
+	redirect(login.php);
+}
+
 ?>
 
 

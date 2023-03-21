@@ -1,4 +1,9 @@
 <?php
+
+if (logged_in(true){
+	$isMe = true;
+}
+
 if (!isset($_POST)) {
         $msg = 'no post msg, fuck off';
         echo json_encode($msg);
@@ -9,6 +14,7 @@ $request = $_POST;
 $response = "unsupported request type, fuck off";
 
 require('rabbitMQClient.php');
+ 
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +24,7 @@ require('rabbitMQClient.php');
 </head>
 <body>
 	<h1>My Friends</h1>
-	<?php
+	<?php if ($isMe) :
 
 	$servername = "localhost";
 	$username = "jkz3";
