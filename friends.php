@@ -1,4 +1,6 @@
 <?php
+require('functions.php');
+require('navbar.php');
 
 if (logged_in(true)) {
 	$isMe = true;
