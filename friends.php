@@ -1,7 +1,22 @@
 <?php
-require('functions.php');
-require('navbar');
+
+if (logged_in(true)) {
+	$isMe = true;
+}
+
+if (!isset($_POST)) {
+        $msg = 'no post msg, fuck off';
+        echo json_encode($msg);
+        exit(0);
+}
+
+$request = $_POST;
+$response = "unsupported request type, fuck off";
+
+require('rabbitMQClient.php');
+ 
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +24,7 @@ require('navbar');
 </head>
 <body>
 	<h1>My Friends</h1>
-	<?php
+	<?php if ($isMe) :
 
 	$servername = "localhost";
 	$username = "jkz3";
@@ -48,4 +63,3 @@ require('navbar');
 	?>
 </body>
 </html>
-

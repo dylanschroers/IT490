@@ -1,6 +1,32 @@
+
+
+
 <?php
 require('functions.php');
 require('navbar.php');
+
+require_once('path.inc');
+require_once('get_host_info.inc');
+require_once('rabbitMQLib.inc');
+
+
+//validates session
+ 
+
+if (logged_in(true)) {
+
+
+
+if (!isset($_POST)) {
+        $msg = 'no post msg, fuck off';
+        echo json_encode($msg);
+        exit(0);
+}
+
+$request = $_POST;
+$response = "unsupported request type, fuck off";
+
+require('rabbitMQClient.php');
 
 //this is all for the profile and to grab info from DB
 
@@ -9,15 +35,16 @@ $servername = "localhost";
 $username = "jkz3";
 $password = "12345";
 $dbName = "Users";
-
-$conn = new mysqli($servername, $username, $password, $dbName);
-
-
-//connection error
 if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
         }
 
+$conn = mysqli_connect($servername, $username, $password, $dbName);
+
+
+//connection error
+if (!$conn){
+        die("The connection failed: " . mysqli_connect_error());}
 
 
 //query
@@ -39,6 +66,12 @@ echo "</table>";
 
 
 mysqli_close($conn);
+
+}
+else{
+	redirect(login.php);
+}
+
 ?>
 
 
