@@ -20,14 +20,14 @@
         if ($percent < 50){
             echo "Were you really watching?";
         }
-        elseif (75 > $percent >= 50){
-            echo "You definately payed attention";
+        elseif ($percent < 75 && $percent >= 50){
+            echo "You definitely paid attention";
         }
-        elseif (90 > $percent >= 75){
+        elseif ($percent < 90 && $percent >= 75){
             echo "You know your stuff!";
         }
         elseif ($percent >= 90){
-            echo "Did you write this show?";
+            echo "Did you write this show?! Outstanding!";
         }
     }
 

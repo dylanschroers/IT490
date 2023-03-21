@@ -1,5 +1,5 @@
-include results.php;
 <?php
+require('results.php');
 
     $topic = $_POST['topic'];
     $questions = array();
