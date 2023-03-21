@@ -4,7 +4,8 @@ require('rabbitMQClient.php');
 //$mydb = new mysqli('127.0.0.1','dbmaster','12345','it490');
 
 function doLogin($username, $password) {
-	$mydb = new mysqli('127.0.0.1','testuser','12345','Users');
+	$mydb = new mysqli('127.0.0.1', 'dbmaster', '12345', 'it490');
+	//$mydb = new mysqli('127.0.0.1','testuser','12345','Users');
 	if ($mydb->errno != 0)
 	{
 		echo "failed to connect to database: ". $mydb->error . PHP_EOL;
@@ -43,8 +44,8 @@ function doLogin($username, $password) {
 }
 
 function popDatabase($searchVal, $apiDrop) {
-
-	$mydb = new mysqli('127.0.0.1','testuser','12345','Cache');
+	$mydb = new mysqli('127.0.0.1', 'dbmaster', '12345', 'it490');
+	//$mydb = new mysqli('127.0.0.1','testuser','12345','Cache');
 	if ($mydb->errno != 0) {
 		echo "failed to connect to database: ". $mydb->error.PHP_EOL;
 		exit(0);
@@ -119,7 +120,8 @@ function checkCache($checkVal, $checkType) {
 	echo $checkVal;
 	echo $checkType;
 
-	$mydb = new mysqli('127.0.0.1','testuser','12345','Cache');
+	$mydb = new mysqli('127.0.0.1', 'dbmaster', '12345', 'it490');
+	//$mydb = new mysqli('127.0.0.1','testuser','12345','Cache');
 	if ($mydb->errno != 0) {
 		echo "failed to connect to database: ". $mydb->error.PHP_EOL;
 		exit(0);
