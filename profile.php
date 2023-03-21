@@ -1,7 +1,6 @@
-	
-
-
 <?php
+require('functions.php');
+require('navbar.php');
 
 //this is all for the profile and to grab info from DB
 

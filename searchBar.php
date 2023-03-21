@@ -1,5 +1,11 @@
-#This is will be the search page until partial search bar is created
+<?php
+require('functions.php');
+require('navbar.php');
+?>
+
 <html>
+<p style="text-align:center">This will be the page placeholder for searching up TV shows until this feature is implemented as a function.</p>
+
 <script>
 	function HandleSearchResponse(response) {
 		try {
@@ -33,12 +39,16 @@
 </script>
 <body>
 	<form id ='search'>
-	<input type ='text' id ='showTS' placeholder ="Search..">
-	<input type ='button' value ='Search' onclick="showSearch(document.getElementById('showTS').value);">
-	
-	<div id ="searchResponse">
-	waiting
+		<input type ='text' id ='showTS' placeholder ="Search..">
+		<input type ='button' value ='Search' onclick="showSearch(document.getElementById('showTS').value);">
+		
+		<div id ="searchResponse">
+			waiting
+		</div>
+	</form>
+	<div class="input-group">
+		<input type="search" class="form-control rounded" placeholder="Search" aria-label="Search.." aria-describedby="search-addon" />
+		<button type="button" class="btn btn-outline-primary">Search</button>
 	</div>
-
 </body>
 </html>

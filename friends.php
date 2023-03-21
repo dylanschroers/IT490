@@ -1,3 +1,7 @@
+<?php
+require('functions.php');
+require('navbar');
+?>
 <!DOCTYPE html>
 <html>
 <head>

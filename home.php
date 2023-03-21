@@ -14,6 +14,6 @@ require('navbar.php');
 </head>
 <body>
 	<p style="text-align:center">Learn more about your favorite TV show!</p>
-	<button style="position:absolute"></button>
+	<button style="margin-left:47%"class="button" onclick="window.location.href='searchBar.php';">Search</button>
 </body>
 </html>
