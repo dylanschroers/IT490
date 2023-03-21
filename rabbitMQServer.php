@@ -20,7 +20,7 @@ function requestProcessor($request)
     case "validate_session":
       return doValidate($request['sessionId']);
       break;
-    case "search" or "lookup":
+    case "dbsearch" or "lookup":
 	    echo ("checking value: ".$request['check']);
 	    echo ("checking type: ".$request['type']);
 	    $test =  checkCache($request['check'], $request['type']);
