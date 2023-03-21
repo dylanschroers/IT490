@@ -21,8 +21,8 @@ function requestProcessor($request) {
 			return getData($request['showID'], "lookup");
 			break;
 	}
-	echo 'here';
-	echo $request['type'];
+	//echo 'here';
+	//echo $request['type'];
   	//return array("returnCode" => '0', 'message'=>"dmz error");
 }
 
