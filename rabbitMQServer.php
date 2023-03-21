@@ -13,11 +13,6 @@ function requestProcessor($request) {
   	}
 	switch ($request['type'])
   	{
-    		case "Login":
-      			return doLogin($request['username'],$request['password']);
-   		case "validate_session":
-			return doValidate($request['sessionId']);
-			break;
 		case "Request":
 			return getData($request['search'], "search");
 			break;
@@ -28,7 +23,7 @@ function requestProcessor($request) {
 	}
 	echo 'here';
 	echo $request['type'];
-  	return array("returnCode" => '0', 'message'=>"Server received request and processed");
+  	//return array("returnCode" => '0', 'message'=>"dmz error");
 }
 
 $server = new rabbitMQServer("testRabbitMQ.ini","testServer");
