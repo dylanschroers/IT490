@@ -52,7 +52,23 @@ function checkCache($checkMsg, $checkType) {
 	return($response);
 	
 }
+function recShow($userID, $showID) {
+	if (isset($argv[1])) {
+		$msg = $argv[1];
+	} else {
+		$msg = "test msg";
+	}
 
+	$client = new rabbitMQClient("testRabbitMQ.ini", "testServer");
+	$request = array();
+	$request['type'] = "showRec";
+	$request['userID'] = $userID;
+	$request['showID'] = $showID;
+	$request['message'] = $msg;
+
+	$response = $client->send_request($request);
+	return($response);
+}
 //print_r(checkCache("1", "lookup"));
 //print_r($response);
 //echo "\n\n";
