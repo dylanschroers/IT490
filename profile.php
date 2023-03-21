@@ -3,7 +3,6 @@
 
 <?php
 require('functions.php');
-require('navbar.php');
 require('header.php');
 
 require_once('path.inc');

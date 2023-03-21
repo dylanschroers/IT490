@@ -1,6 +1,6 @@
 <?php
 require('functions.php');
-require('navbar.php');
+require('header.php');
 
 if (logged_in(true)) {
 	$isMe = true;

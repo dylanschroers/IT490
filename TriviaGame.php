@@ -1,4 +1,6 @@
 <?php
+require('functions.php');
+require('header.php');
 require('results.php');
 
     $topic = $_POST['topic'];

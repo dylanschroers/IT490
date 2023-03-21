@@ -1,3 +1,7 @@
+<?php
+require('functions.php');
+require('header.php');
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,7 +10,7 @@
     </head>
     <body>
         <h1>Trivia Game</h1>
-        <p>
+        <p style="text-align:center">
             Select which TV show you want to attempt.
             During this game, select the option with the correct answer (either a, b, or c).
             You will see your results at the end.

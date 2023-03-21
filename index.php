@@ -30,7 +30,6 @@ function SendLoginRequest(formUname,formPword) {
 </script>
 <style>
 	* {
-		background-color: lightblue;
 		padding: 2%;
 	}
 	#cent {
@@ -39,12 +38,13 @@ function SendLoginRequest(formUname,formPword) {
 	}
 	#login {
 		padding: 1%;
+		position: static;
 	}
 	.txtres {
 		text-align: center;
 	}
 	.lgnbtn {
-		margin: auto;
+		margin-left: 46%;
 	}
 	#register {
 		float: right;

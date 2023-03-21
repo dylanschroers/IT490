@@ -1,4 +1,6 @@
 <?php
+require('functions.php');
+require('header.php');
 
 // Connect to the MySQL database
 $host = 'localhost';
