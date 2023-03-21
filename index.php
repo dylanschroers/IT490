@@ -7,8 +7,11 @@
 
 function HandleLoginResponse(response) {
 	var text = (response);
-	
-	document.getElementById("textResponse").innerHTML = "response: "+text+"<p>";
+	if (text = "client received response: true") {
+		location.replace("home.php");
+	} else {
+		document.getElementById("textResponse").innerHTML = "response: "+text+"<p>";
+	}
 }
 
 function SendLoginRequest(formUname,formPword) {
@@ -74,7 +77,7 @@ function SendLoginRequest(formUname,formPword) {
 			</div>
 
 			<!-- Login Button -->
-			<button type="button" class="btn btn-primary btn-block mb-4 lgnbtn" value="Login" onclick="SendLoginRequest(document.getElementById('username').value, document.getElementById('password').value);">Login</button>
+			<button type="button" class="btn btn-primary btn-block mb-4 lgnbtn" value="Login" onclick="SendLoginRequest(document.getElementById('form2Example1').value, document.getElementById('form2Example2').value);">Login</button>
 		</form>
 	</div>
 </body>

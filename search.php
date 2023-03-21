@@ -10,11 +10,9 @@ $response = "unsupported request type, fuck off";
 
 require('rabbitMQClient.php');
 
-/*
 $request = array();
 $request['sval'] = 'bad';
 $request['type'] = 'search';
- */
 
 $result = (checkCache($request['sval'], $request['type']));
 

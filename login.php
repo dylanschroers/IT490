@@ -18,11 +18,7 @@ require_once('rabbitMQClient.php');
 
 if ($request["type"] == "login") {
 
-	if (sendLogin($request["uname"],$request["pword"])) {
-		$response = "in the db";
-	}else {
-		$response = "not in the db";
-	}
+	$response = (sendLogin($request["uname"], $request["pword"]));
 
 	//$response = "to here";
 }
