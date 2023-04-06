@@ -1,0 +1,26 @@
+#systemd config target file
+#on startup, will start all applications through their .service files
+#my-services.target
+
+[Unit]
+Description=My Services
+After=network.target
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/bin/true
+
+#Include .service file sto target below
+[Unit]
+Requires=mysql.service apache2.service rabbitmq.service
+After=mysql.service apache2.service rabbitmq.service
+
+
+#PID File for MyServices
+[Service]
+ExecStart=/usr/bin/my-services
+PIDFile=/run/my-services.pid

@@ -1,0 +1,19 @@
+#systemd rabbitmq startup file
+#initiates rabbitmq services
+#rabbitmq.services
+
+[Unit]
+Description=RabbitMQ Server
+After=my-services.target
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+User=rabbitmq
+Group=rabbitmq
+Type=forking
+ExecStart=/usr/sbin/rabbitmq-server -detached
+ExecStop=/usr/sbin/rabbitmqctl stop
+PIDFile=/var/run/rabbitmq/pid
+Restart=on-failure
